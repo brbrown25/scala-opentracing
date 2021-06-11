@@ -10,9 +10,10 @@ ThisBuild / scalacOptions ++= crossScalacOptions(scalaVersion.value)
 ThisBuild / pushRemoteCacheTo := Some(
   MavenCache("local-cache", baseDirectory.value / sys.env.getOrElse("CACHE_PATH", "sbt-cache"))
 )
+ThisBuild / evictionErrorLevel := Level.Info
 resolvers += Resolver.sonatypeRepo("releases")
 
-lazy val root = (project in file(".")).settings(skip in publish := true).aggregate(core, context, httpServer, httpClient, httpTest, amqp)
+lazy val root = (project in file(".")).settings(skip / publish := true).aggregate(core, context, httpServer, httpClient, httpTest, amqp)
 
 lazy val amqp = Project(id = "scala-opentracing-amqp", base = file("amqp")).settings(
   crossScalaVersions := supportedScalaVersions,
@@ -79,5 +80,5 @@ lazy val httpTest = Project(id = "scala-opentracing-http4s-test", base = file("h
       TestsDependencies.wiremock,
       TestsDependencies.http4sBlazeClient
     ),
-    skip in publish := true
+    skip / publish := true
   )

@@ -1,15 +1,13 @@
 package com.colisweb.tracing.context
 
-import scala.concurrent._
 import scala.concurrent.duration._
 import org.scalatest._
 import cats.effect._
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
+import cats.effect.unsafe.implicits.global
 
 object TestUtils {
-  implicit val timer: Timer[IO] = IO.timer(ExecutionContext.global)
-
   def testStdOut[A](
       body: IO[A],
       assertion: (String, A) => Assertion

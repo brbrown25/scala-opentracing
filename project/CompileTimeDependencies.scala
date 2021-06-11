@@ -3,22 +3,22 @@ import sbt._
 object Versions {
 
   final val cats            = "2.6.1"
-  final val catsEffect      = "2.5.1"
+  final val catsEffect      = "3.1.1"
   final val circe           = "0.14.1"
   final val datadog         = "0.68.0"
   final val fs2             = "4.1.0"
-  final val http4s          = "0.21.24"
+  final val http4s          = "1.0.0-M23"
   final val kindProjector   = "0.13.0"
   final val logback         = "1.2.3"
   final val logstash        = "6.6"
-  final val log4cats        = "1.3.1"
+  final val log4cats        = "2.1.1"
   final val opentracing     = "0.33.0"
   final val requests        = "0.6.9"
   final val scalaCompat     = "2.4.4"
   final val scalaLogging    = "3.9.3"
   final val scalatest       = "3.2.9"
   final val scalaCollection = "2.1.4"
-  final val tapir           = "0.17.19"
+  final val tapir           = "0.18.0-M15"
   final val wiremock        = "2.27.2"
 }
 

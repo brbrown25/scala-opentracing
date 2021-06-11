@@ -2,10 +2,10 @@ package com.colisweb.tracing.context
 
 import cats.effect.IO
 import TestUtils._
+import cats.effect.unsafe.implicits.global
 import com.typesafe.scalalogging.StrictLogging
 import org.scalatest.funspec.AnyFunSpec
 import org.scalatest.matchers.should.Matchers
-
 import scala.concurrent.duration._
 
 class LoggingTracingContextSpec extends AnyFunSpec with Matchers with StrictLogging {
